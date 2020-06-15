@@ -41,6 +41,12 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+    - task: Bash@3
+      displayName: 'Show contents of Manifest file'
+      inputs:
+        targetType: 'inline'
+        script: 'cat azure-vote-all-in-one-redis.yaml'
           
     - upload: manifests
       artifact: manifests
