@@ -10,19 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - script:
     echo $(System.DefaultWorkingDirectory)
   displayName: 'Show path of directory'
 
 - script:
-    echo cd echo $(System.DefaultWorkingDirectory)
+    echo cd $(System.DefaultWorkingDirectory)
     echo ls -la 
   displayName: 'Show contents of dir'
