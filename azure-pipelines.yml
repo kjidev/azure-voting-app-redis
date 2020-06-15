@@ -71,7 +71,7 @@ stages:
             inputs:
               action: 'deploy'
               kubernetesServiceConnection: 'demodemo-k8s-demodemo-ns'
-              manifests: $(deploymentfilePath)
+              manifests: '$(Build.SourcesDirectory)/$(deploymentfilePath)'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
               imagePullSecrets: '$(imagePullSecret)'
 
