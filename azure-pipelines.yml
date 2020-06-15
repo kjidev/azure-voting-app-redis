@@ -15,7 +15,7 @@ variables:
   imageRepository: 'kjidevazurevotingappredis'
   containerRegistry: 'demodemocr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  deploymentfilePath : 'azure-vote-all-in-one-redis.yaml'
+  deploymentfilePath: '(Build.ArtifactStagingDirectory)/azure-vote-all-in-one-redis.yaml'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'demodemocrf5df-auth'
 
@@ -71,7 +71,7 @@ stages:
             inputs:
               action: 'deploy'
               kubernetesServiceConnection: 'demodemo-k8s-demodemo-ns'
-              manifests: '**.yaml'
+              manifests: '$(deploymentfilePath)'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
               imagePullSecrets: '$(imagePullSecret)'
 
