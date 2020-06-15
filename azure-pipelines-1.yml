@@ -20,11 +20,19 @@ steps:
   displayName: 'Show contents of dir'
 
 - task: Bash@3
+  displayName: 'Show all sys env variables'
   inputs:
     targetType: 'inline'
     script: 'env | sort'
 
 - task: Bash@3
+  displayName: 'Show files in $(BUILD_SCOURCESDIRECTORY)'
   inputs: 
     targetType: 'inline'
     script: 'ls -la $(BUILD_SOURCESDIRECTORY)'
+
+- task: Bash@3
+  displayName: 'Show contents of Manifest file'
+  inputs:
+   targetType: 'inline'
+   script: 'cat $(BUILD_SOURCEDIRECTORY)/azure-vote-all-in-one-redis.yaml'
