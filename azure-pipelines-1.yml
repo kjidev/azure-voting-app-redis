@@ -20,3 +20,9 @@ steps:
 
 - script:
     echo $(System.DefaultWorkingDirectory)
+  displayName: 'Show path of directory'
+
+- script:
+    echo cd echo $(System.DefaultWorkingDirectory)
+    echo ls -la 
+  displayName: 'Show contents of dir'
