@@ -70,7 +70,7 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/azure-vote-all-in-one-redis.yaml
+                $(Build.SourcesDirectory)/azure-vote-all-in-one-redis.yaml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
