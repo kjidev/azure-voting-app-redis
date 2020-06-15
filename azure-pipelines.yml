@@ -71,7 +71,7 @@ stages:
             inputs:
               action: 'deploy'
               kubernetesServiceConnection: 'demodemo-k8s-demodemo-ns'
-              manifests: $(Build.SourcesDirectory)/azure-vote-all-in-one-redis.yaml
+              manifests: '**.yaml'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
               imagePullSecrets: '$(imagePullSecret)'
 
