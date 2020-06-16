@@ -73,7 +73,7 @@ stages:
             displayName: 'Show all sys env variables'
             inputs:
               targetType: 'inline'
-              script: 'env | sort | manifests'
+              script: 'env | sort'
 
           - task: KubernetesManifest@0
             displayName: Create imagePullSecret
