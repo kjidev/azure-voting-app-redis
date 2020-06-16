@@ -15,7 +15,6 @@ variables:
   imageRepository: 'kjidevazurevotingappredis'
   containerRegistry: 'demodemocr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  deploymentfilePath: '(Build.ArtifactStagingDirectory)/azure-vote-all-in-one-redis.yaml'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'demodemocrf5df-auth'
 
