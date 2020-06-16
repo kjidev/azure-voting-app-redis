@@ -68,6 +68,13 @@ stages:
           - download: current
             artifact: manifests
             displayName: 'Download Artifact: manifests'
+
+          - task: Bash@3
+            displayName: 'Show all sys env variables'
+            inputs:
+              targetType: 'inline'
+              script: 'env | sort | manifests'
+
           - task: KubernetesManifest@0
             displayName: Create imagePullSecret
             inputs:
@@ -80,7 +87,7 @@ stages:
             inputs:
               action: 'deploy'
               kubernetesServiceConnection: 'demodemo-k8s-demodemo-ns'
-              manifests: 'manifests/azure-vote-all-in-one-redis.yaml'
+              manifests: 'manifests/'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
               imagePullSecrets: '$(imagePullSecret)'
 
